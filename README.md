@@ -7,7 +7,7 @@
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
 
 
--------- 초안 to do list 작성
+-------- to do list
 룰_1. 주어진 횟수
 	숫자 입력 테스트	
 		숫자 여부 확인
