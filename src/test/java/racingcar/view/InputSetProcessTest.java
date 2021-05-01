@@ -4,33 +4,23 @@ import static org.assertj.core.api.Assertions.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import racingcar.domain.Car;
+import racingcar.domain.Cars;
+
 class InputSetProcessTest {
 	
-    @Test
-    @DisplayName("플레이 횟수 입력 실패 테스트")
-    void setCountFailTest() {
-    	InputInfo inputInfo = new InputInfo(0);
-    }
-    
     @Test
     @DisplayName("플레이 횟수 입력 성공 테스트")
     void setCountSucessTest() {
     	
     	InputInfo inputInfo = new InputInfo(1);
     	
-    }
-    
-    @Test
-    @DisplayName("자동차 이름 빈값 테스트")
-    void setNamesNullTest() {
-    	
-    	InputInfo inputInfo = new InputInfo(1);
-
-    	inputInfo.setCarNames("");
-
     }
     
     @Test
@@ -81,8 +71,9 @@ class InputSetProcessTest {
 
     	inputInfo.setCarNames("RED,YELLOW,BLACK");
     	
-    	assertTrue(InputSetProcess.carNameLengthCheck(inputInfo.getCarNames()[1]),
-    				"자동차 이름의 길이는 0보다 크고 5보다 작아야 합니다.");
+    	assertThatIllegalArgumentException()
+    			.isThrownBy(() -> new Car(inputInfo.getCarNames()[1]))
+    			.withMessageMatching("자동차 이름의 길이는 0보다 크고 5보다 작아야 합니다.");
     }
     
     @Test
@@ -92,7 +83,27 @@ class InputSetProcessTest {
 
     	inputInfo.setCarNames("RED,BLUE,BLACK");
     	
-    	assertTrue(InputSetProcess.carNameLengthCheck(inputInfo.getCarNames()[1]),
-    				"자동차 이름의 길이는 0보다 크고 5보다 작아야 합니다.");
+    	assertThatIllegalArgumentException()
+				.isThrownBy(() -> new Car(inputInfo.getCarNames()[1]))
+				.withMessageMatching("자동차 이름의 길이는 0보다 크고 5보다 작아야 합니다.");
     }
+    
+    @DisplayName("자동차 이름 부여 생성 테스트")
+    void carWithNameSucessTest() {
+        Car car = new Car("BLACK");
+        assertThat(car.getCarName().getCarName()).isEqualTo("BLACK");
+    }
+    
+	@Test
+	@DisplayName("N개의 자동차 이름 부여 테스트")
+	void carNameGrantTest() {
+    	InputInfo inputInfo = new InputInfo(1);
+    	inputInfo.setCarNames("RED,BLUE,BLACK");
+    	
+    	Cars cars = new Cars(inputInfo.getCarNames());
+    	
+    	for(Car forCar : cars.getCars()) {
+    		System.out.println(forCar.getCarName().getCarName()+":");
+    	}
+	}
 }

@@ -2,7 +2,12 @@ package racingcar.domain;
 
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.*;
+
+import racingcar.view.InputInfo;
 
 class RacingCarProcessTest {
     
@@ -28,9 +33,4 @@ class RacingCarProcessTest {
         assertThat(GetRandomNumber.getRandomNumber()).isBetween(0, 9);
     }
     
-    @DisplayName("자동차 이름 부여 생성 테스트")
-    void carWithNameSucessTest() {
-        Car car = new Car("BLACK");
-        assertThat(car.getCarName().getCarName()).isEqualTo("BLACK");
-    }
 }
