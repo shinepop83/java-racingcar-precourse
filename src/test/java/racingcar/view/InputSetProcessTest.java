@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import racingcar.domain.Car;
 import racingcar.domain.Cars;
+import racingcar.domain.GetRandomNumber;
 
 class InputSetProcessTest {
 	
@@ -21,6 +22,16 @@ class InputSetProcessTest {
     	
     	InputInfo inputInfo = new InputInfo(1);
     	
+    }
+    
+    @Test
+    @DisplayName("주어진 횟수 수행 테스트")
+    void racingCarQuarterPlay(){
+    	InputInfo inputInfo = new InputInfo(5);
+    	
+    	for(int i=0; i < inputInfo.getRoundCount().getNum(); i++) {
+    		System.out.println((i+1)+"회 : "+GetRandomNumber.getRandomNumber());
+    	}
     }
     
     @Test

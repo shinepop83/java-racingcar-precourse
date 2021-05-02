@@ -19,14 +19,16 @@ public class Car {
         return carName;
     }
     
-    // 우승자 비교
     public CarRecord getCarRecord() {
     	return carRecord;
     }
     
-    // 기록 출력
     public String getCarRecordView() {
     	return carRecordView.toString();
     }
     
+    public void carAddRecord() {
+    	this.carRecord.addMileage();
+    	carRecordView.append("-");
+    }
 }

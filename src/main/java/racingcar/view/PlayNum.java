@@ -12,4 +12,8 @@ public class PlayNum {
 		
 		this.num = num;
 	}
+	
+	public int getNum() {
+		return num;
+	}
 }

@@ -1,13 +1,14 @@
 package racingcar.domain;
 
 public class CarRecord {
-	private int record;
+	private static final int ADD_RECORD_VALUE = 1;
+	private int record = 0;
 
 	public int getMileage() {
 		return record;
 	}
 
-	public void addMileage(int record) {
-		this.record += record;
+	public void addMileage() {
+		this.record += ADD_RECORD_VALUE;
 	}
 }

@@ -8,7 +8,11 @@ public class InputInfo {
 	public InputInfo(int num) {
 		this.roundCount = new PlayNum(num);
 	}
-
+	
+	public PlayNum getRoundCount() {
+		return roundCount;
+	}
+	
 	public String[] getCarNames() {
 		return carNames;
 	}
@@ -18,15 +22,11 @@ public class InputInfo {
             throw new IllegalArgumentException("빈값을 등록 할 수 없습니다");
         }
         this.carNames = carNames.split(",");
+        this.carCount = this.carNames.length;
     }
 
 	public int getCarCount() {
 		return carCount;
 	}
 
-	public void setCarCount(int carCount) {
-		this.carCount = carCount;
-	}
-	
-	
 }
