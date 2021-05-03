@@ -1,6 +1,7 @@
 package racingcar.view;
 
 public class PlayNum {
+	
 	public static final int MIN_NO = 1;
 
 	private int num;
