@@ -32,7 +32,6 @@ public class RacingCarMainController {
 
 		// 시도 할 회수 만큼 수행
 		RacingCarProcess.quarterPlay(cars, inputInfo.getRoundCount().getNum());
-
 		// 최종 우승 자동차 조회
 		RacingCarProcess.getChampionRacingCar(cars);
 	}
