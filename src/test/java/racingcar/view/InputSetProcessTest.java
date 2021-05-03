@@ -14,9 +14,7 @@ class InputSetProcessTest {
 	@Test
 	@DisplayName("플레이 횟수 입력 성공 테스트")
 	void setCountSucessTest() {
-
 		InputInfo inputInfo = new InputInfo(1);
-
 	}
 
 	@Test
