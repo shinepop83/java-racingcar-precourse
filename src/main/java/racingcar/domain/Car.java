@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 public class Car {
+	
 	private CarName carName;
 	private CarRecord carRecord;
 	private StringBuilder carRecordView;
