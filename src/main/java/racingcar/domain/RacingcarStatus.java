@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 public enum RacingcarStatus {
+	
 	ADVANCE, STOP;
 
 	public boolean isAdvance() {
