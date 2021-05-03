@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class RacingCarProcess {
+	
 	private static final int STANDARD_NUM = 3;
 
 	// 시도 할 회수 만큼 수행
