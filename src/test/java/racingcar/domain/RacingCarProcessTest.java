@@ -78,7 +78,6 @@ class RacingCarProcessTest {
     	for(Car car : cars) {
     		 System.out.print(car.getCarName().getCarName() + ":" +car.getCarRecord().getMileage() + ", ");
     	}
-    	
     }
     
     @Test
