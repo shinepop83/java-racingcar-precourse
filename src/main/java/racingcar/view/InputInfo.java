@@ -1,6 +1,7 @@
 package racingcar.view;
 
 public class InputInfo {
+	
 	private final PlayNum roundCount;
 	private String[] carNames;
 	private int carCount;
