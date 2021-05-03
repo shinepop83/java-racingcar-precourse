@@ -3,14 +3,11 @@ package racingcar.domain;
 import static org.assertj.core.api.Assertions.*;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import org.assertj.core.util.Arrays;
-import org.junit.jupiter.api.*;
-
-import racingcar.view.InputInfo;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
 
 class RacingCarProcessTest {
     
@@ -33,7 +30,7 @@ class RacingCarProcessTest {
     @RepeatedTest(value = 10)
     @DisplayName("랜덤 숫자 유효성 반복 체크 테스트")
     void randomNumberTest() {
-        assertThat(GetRandomNumber.getRandomNumber()).isBetween(0, 9);
+		assertThat(GetRandomNumber.getRandomNumber()).isBetween(0, 9);
     }
     
     @Test
